@@ -50,6 +50,26 @@ module objects {
             this.numberOfObjects = scene.children.length;
         }
         
+        // Change to random colors
+        public randomColor(): void {
+            head.material.color.setRGB(Math.random(), Math.random(), Math.random());
+            body.material.color.setRGB(Math.random(), Math.random(), Math.random());
+            arm1.material.color.setRGB(Math.random(), Math.random(), Math.random());
+            arm2.material.color.setRGB(Math.random(), Math.random(), Math.random());
+            leg1.material.color.setRGB(Math.random(), Math.random(), Math.random());
+            leg2.material.color.setRGB(Math.random(), Math.random(), Math.random());
+        }
+        
+        // Change to preset colors
+        public presetColor(): void {
+            head.material.color.setHex(0xffa500);
+            body.material.color.setHex(0xff69b4);
+            arm1.material.color.setHex(0xffff7f);
+            arm2.material.color.setHex(0x89cff0);
+            leg1.material.color.setHex(0x8c001a);
+            leg2.material.color.setHex(0x551a8b);
+        }
+        
         // show scene objects
         public outputObjects(): void {
             console.log(scene.children);
