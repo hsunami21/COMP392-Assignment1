@@ -117,6 +117,7 @@ function addControl(controlObject) {
     gui.add(controlObject, 'rotationSpeedZ', 0, 0.5);
     gui.add(controlObject, 'randomColor');
     gui.add(controlObject, 'presetColor');
+    gui.add(controlObject, 'resetScene');
     // gui.add(controlObject, 'addCube');
     // gui.add(controlObject, 'removeCube');
     // gui.add(controlObject, 'outputObjects');

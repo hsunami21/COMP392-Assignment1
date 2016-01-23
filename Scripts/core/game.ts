@@ -97,7 +97,7 @@ function init() {
     console.log("Added Stats to scene...");
 
     // Head
-    head = new THREE.Mesh( new THREE.CubeGeometry( 4, 4, 4 ), new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/face.jpg')}));
+    head = new THREE.Mesh( new THREE.CubeGeometry( 4, 4, 4 ), new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/face.jpg')}) );
 	head.position.y = 19;
     bodyMesh.add(head);
     
@@ -151,6 +151,7 @@ function addControl(controlObject: Control): void {
     gui.add(controlObject, 'rotationSpeedZ', 0, 0.5);
     gui.add(controlObject, 'randomColor');
     gui.add(controlObject, 'presetColor');
+    gui.add(controlObject, 'resetScene');
     // gui.add(controlObject, 'addCube');
     // gui.add(controlObject, 'removeCube');
     // gui.add(controlObject, 'outputObjects');

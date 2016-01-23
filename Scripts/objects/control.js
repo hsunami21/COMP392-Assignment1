@@ -49,6 +49,21 @@ var objects;
             leg1.material.color.setHex(0x8c001a);
             leg2.material.color.setHex(0x551a8b);
         };
+        // Reset scene
+        Control.prototype.resetScene = function () {
+            this.rotationSpeedX = 0;
+            this.rotationSpeedY = 0;
+            this.rotationSpeedZ = 0;
+            bodyMesh.rotation.x = 0;
+            bodyMesh.rotation.y = 0;
+            bodyMesh.rotation.z = 0;
+            head.material.color.setHex(0xffffff);
+            body.material.color.setHex(0xffffff);
+            arm1.material.color.setHex(0xffffff);
+            arm2.material.color.setHex(0xffffff);
+            leg1.material.color.setHex(0xffffff);
+            leg2.material.color.setHex(0xffffff);
+        };
         // show scene objects
         Control.prototype.outputObjects = function () {
             console.log(scene.children);
