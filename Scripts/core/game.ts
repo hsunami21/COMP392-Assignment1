@@ -88,7 +88,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control(0, 60, 40);
+    control = new Control(0, 0, 0, 60, 40);
     addControl(control);
     console.log("Added Control to scene...");
     
@@ -146,11 +146,14 @@ function onResize(): void {
 
 
 function addControl(controlObject: Control): void {
-    gui.add(controlObject, 'rotationSpeed', 0, 0.5);
-    gui.add(controlObject, 'addCube');
-    gui.add(controlObject, 'removeCube');
-    gui.add(controlObject, 'outputObjects');
-    gui.add(controlObject, 'numberOfObjects').listen();
+    gui.add(controlObject, 'rotationSpeedX', 0, 0.5);
+    gui.add(controlObject, "rotationSpeedY", 0, 0.5);
+    gui.add(controlObject, "rotationSpeedZ", 0, 0.5);
+    
+    // gui.add(controlObject, 'addCube');
+    // gui.add(controlObject, 'removeCube');
+    // gui.add(controlObject, 'outputObjects');
+    // gui.add(controlObject, 'numberOfObjects').listen();
 }
 
 function addStatsObject() {
@@ -170,9 +173,9 @@ function gameLoop(): void {
     scene.traverse(function(threeObject:THREE.Object3D) {
         if (threeObject == bodyMesh) {
 
-            threeObject.rotation.x += control.rotationSpeed;
-            threeObject.rotation.y += control.rotationSpeed;
-            threeObject.rotation.z += control.rotationSpeed;
+            threeObject.rotation.x += control.rotationSpeedX;
+            threeObject.rotation.y += control.rotationSpeedY;
+            threeObject.rotation.z += control.rotationSpeedZ;
         }
     });
     

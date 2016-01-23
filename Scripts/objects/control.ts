@@ -8,11 +8,15 @@ module objects {
         private _planeHeight: number;
         
         // PUBLIC INSTANCE VARIABLES
-        public rotationSpeed: number;
+        public rotationSpeedX: number;
+        public rotationSpeedY: number;
+        public rotationSpeedZ: number;
         public numberOfObjects: number;
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(rotationSpeed: number, planeWidth: number, planeHeight: number) {
-            this.rotationSpeed = rotationSpeed;
+        constructor(rotationSpeedX: number, rotationSpeedY: number, rotationSpeedZ: number, planeWidth: number, planeHeight: number) {
+            this.rotationSpeedX = rotationSpeedX;
+            this.rotationSpeedY = rotationSpeedY;
+            this.rotationSpeedZ = rotationSpeedZ;
             this.numberOfObjects = scene.children.length;
             this._planeWidth = planeWidth;
             this._planeHeight = planeHeight;

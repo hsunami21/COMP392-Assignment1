@@ -67,7 +67,7 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0, 60, 40);
+    control = new Control(0, 0, 0, 60, 40);
     addControl(control);
     console.log("Added Control to scene...");
     // Add framerate stats
@@ -112,11 +112,13 @@ function onResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 function addControl(controlObject) {
-    gui.add(controlObject, 'rotationSpeed', 0, 0.5);
-    gui.add(controlObject, 'addCube');
-    gui.add(controlObject, 'removeCube');
-    gui.add(controlObject, 'outputObjects');
-    gui.add(controlObject, 'numberOfObjects').listen();
+    gui.add(controlObject, 'rotationSpeedX', 0, 0.5);
+    gui.add(controlObject, "rotationSpeedY", 0, 0.5);
+    gui.add(controlObject, "rotationSpeedZ", 0, 0.5);
+    // gui.add(controlObject, 'addCube');
+    // gui.add(controlObject, 'removeCube');
+    // gui.add(controlObject, 'outputObjects');
+    // gui.add(controlObject, 'numberOfObjects').listen();
 }
 function addStatsObject() {
     stats = new Stats();
@@ -132,9 +134,9 @@ function gameLoop() {
     // rotate the cubes around its axes
     scene.traverse(function (threeObject) {
         if (threeObject == bodyMesh) {
-            threeObject.rotation.x += control.rotationSpeed;
-            threeObject.rotation.y += control.rotationSpeed;
-            threeObject.rotation.z += control.rotationSpeed;
+            threeObject.rotation.x += control.rotationSpeedX;
+            threeObject.rotation.y += control.rotationSpeedY;
+            threeObject.rotation.z += control.rotationSpeedZ;
         }
     });
     // render using requestAnimationFrame
