@@ -61,7 +61,7 @@ function init() {
     console.log("Added an Ambient Light to Scene");
     // Add a SpotLight to the scene
     spotLight = new SpotLight(0xffffff);
-    spotLight.position.set(-40, 60, -10);
+    spotLight.position.set(-400, 60, 500);
     spotLight.castShadow = true;
     scene.add(spotLight);
     console.log("Added a SpotLight Light to Scene");
@@ -74,30 +74,30 @@ function init() {
     addStatsObject();
     console.log("Added Stats to scene...");
     // Head
-    head = new THREE.Mesh(new THREE.CubeGeometry(4, 4, 4), new THREE.MeshBasicMaterial({ color: 0x000000 }));
+    head = new THREE.Mesh(new THREE.CubeGeometry(4, 4, 4), new THREE.MeshPhongMaterial({ map: THREE.ImageUtils.loadTexture('../../Assets/Images/face.jpg') }));
     head.position.y = 19;
     bodyMesh.add(head);
     // Body
-    body = new THREE.Mesh(new THREE.CubeGeometry(8, 10, 2), new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+    body = new THREE.Mesh(new THREE.CubeGeometry(8, 10, 2), new THREE.MeshPhongMaterial({ map: THREE.ImageUtils.loadTexture('../../Assets/Images/brick.jpeg') }));
     body.position.y = 12;
     bodyMesh.add(body);
     // Arm 1
-    arm1 = new THREE.Mesh(new THREE.CubeGeometry(8, 2, 2), new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+    arm1 = new THREE.Mesh(new THREE.CubeGeometry(8, 2, 2), new THREE.MeshPhongMaterial({ map: THREE.ImageUtils.loadTexture('../../Assets/Images/paper.jpg') }));
     arm1.position.x = -8;
     arm1.position.y = 16;
     bodyMesh.add(arm1);
     // Arm 2
-    arm2 = new THREE.Mesh(new THREE.CubeGeometry(8, 2, 2), new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+    arm2 = new THREE.Mesh(new THREE.CubeGeometry(8, 2, 2), new THREE.MeshPhongMaterial({ map: THREE.ImageUtils.loadTexture('../../Assets/Images/paper.jpg') }));
     arm2.position.x = 8;
     arm2.position.y = 16;
     bodyMesh.add(arm2);
     // Leg 1
-    leg1 = new THREE.Mesh(new THREE.CubeGeometry(2, 7, 2), new THREE.MeshBasicMaterial({ color: 0x0000ff }));
+    leg1 = new THREE.Mesh(new THREE.CubeGeometry(2, 7, 2), new THREE.MeshPhongMaterial({ map: THREE.ImageUtils.loadTexture('../../Assets/Images/paper.jpg') }));
     leg1.position.x = -3;
     leg1.position.y = 7 * 0.5;
     bodyMesh.add(leg1);
     // Leg 2
-    leg2 = new THREE.Mesh(new THREE.CubeGeometry(2, 7, 2), new THREE.MeshBasicMaterial({ color: 0x0000ff }));
+    leg2 = new THREE.Mesh(new THREE.CubeGeometry(2, 7, 2), new THREE.MeshPhongMaterial({ map: THREE.ImageUtils.loadTexture('../../Assets/Images/paper.jpg') }));
     leg2.position.x = 3;
     leg2.position.y = 7 * 0.5;
     bodyMesh.add(leg2);
