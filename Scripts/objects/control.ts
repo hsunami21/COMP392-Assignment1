@@ -25,31 +25,6 @@ module objects {
 
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++
         
-        // Remove Cube Method +++++++++++++++++++++++++++++++++
-        public removeCube(): void {
-            var allChildren: THREE.Object3D[] = scene.children;
-            var lastObject = allChildren[allChildren.length - 1];
-            if (lastObject instanceof THREE.Mesh) {
-                scene.remove(lastObject);
-                this.numberOfObjects = scene.children.length;
-            }
-        }
-        
-        // Add Cube Method
-        public addCube(): void {
-            var cubeSize: number = Math.ceil((Math.random() * 3));
-            var cubeGeometry: CubeGeometry = new THREE.CubeGeometry(cubeSize, cubeSize, cubeSize);
-            var cubeMaterial: LambertMaterial = new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff });
-            var cube = new gameObject(
-                cubeGeometry,
-                cubeMaterial,
-                -30 + Math.round((Math.random() * this._planeWidth)),
-                Math.round((Math.random() * 5)),
-                -20 + Math.round((Math.random() * this._planeHeight)));
-            scene.add(cube);
-            this.numberOfObjects = scene.children.length;
-        }
-        
         // Change to random colors
         public randomColor(): void {
             head.material.color.setRGB(Math.random(), Math.random(), Math.random());
@@ -64,9 +39,9 @@ module objects {
         public presetColor(): void {
             head.material.color.setHex(0xffa500);
             body.material.color.setHex(0xff69b4);
-            arm1.material.color.setHex(0xffff7f);
+            arm1.material.color.setHex(0x89cff0);
             arm2.material.color.setHex(0x89cff0);
-            leg1.material.color.setHex(0x8c001a);
+            leg1.material.color.setHex(0x551a8b);
             leg2.material.color.setHex(0x551a8b);
         }
         
@@ -86,8 +61,6 @@ module objects {
             arm2.material.color.setHex(0xffffff);
             leg1.material.color.setHex(0xffffff);
             leg2.material.color.setHex(0xffffff);
-            
-
         }
         
         // show scene objects

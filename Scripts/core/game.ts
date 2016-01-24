@@ -65,7 +65,7 @@ function init() {
     //Add a Plane to the Scene
     plane = new gameObject(
         new PlaneGeometry(60, 40, 1, 1),
-        new LambertMaterial({ color: 0xffffff }),
+        new LambertMaterial({ map:  THREE.ImageUtils.loadTexture('../../Assets/Images/grass.jpg')}),
         0, 0, 0);
 
     plane.rotation.x = -0.5 * Math.PI;
@@ -81,7 +81,7 @@ function init() {
 	
     // Add a SpotLight to the scene
     spotLight = new SpotLight(0xffffff);
-    spotLight.position.set(-400, 60, 500);
+    spotLight.position.set(-40, 120, -40);
     spotLight.castShadow = true;
     scene.add(spotLight);
     console.log("Added a SpotLight Light to Scene");
@@ -97,37 +97,52 @@ function init() {
     console.log("Added Stats to scene...");
 
     // Head
-    head = new THREE.Mesh( new THREE.CubeGeometry( 4, 4, 4 ), new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/face.jpg')}) );
-	head.position.y = 19;
+    head = new gameObject(
+                new THREE.CubeGeometry( 4, 4, 4 ), 
+                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/face.jpg')}),
+                0, 19, 0
+            );
+
     bodyMesh.add(head);
     
     // Body
-    body = new THREE.Mesh( new THREE.CubeGeometry( 8, 10, 2 ), new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/brick.jpeg')}) );
-	body.position.y = 12;
+    body = new gameObject( 
+                new THREE.CubeGeometry( 8, 10, 2 ), 
+                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/brickBody.jpeg')}),
+                0, 12, 0
+            );
     bodyMesh.add(body);
     
     // Arm 1
-    arm1 = new THREE.Mesh( new THREE.CubeGeometry( 8, 2, 2 ), new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paper.jpg')}) );
-    arm1.position.x = -8;
-	arm1.position.y = 16;
+    arm1 = new gameObject( 
+                new THREE.CubeGeometry( 8, 2, 2 ), 
+                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paperArms.jpg')}),
+                -8, 16, 0
+            );
     bodyMesh.add(arm1);
     
     // Arm 2
-    arm2 = new THREE.Mesh( new THREE.CubeGeometry( 8, 2, 2 ), new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paper.jpg')}) );
-    arm2.position.x = 8;
-	arm2.position.y = 16;
+    arm2 = new gameObject( 
+                new THREE.CubeGeometry( 8, 2, 2 ), 
+                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paperArms.jpg')}),
+                8, 16, 0 
+            );
     bodyMesh.add(arm2);
     
     // Leg 1
-    leg1 = new THREE.Mesh( new THREE.CubeGeometry( 2, 7, 2 ), new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paper.jpg')}) );
-    leg1.position.x = -3;
-	leg1.position.y = 7 * 0.5;
+    leg1 = new gameObject( 
+                new THREE.CubeGeometry( 2, 7, 2 ), 
+                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/woodLegs.jpg')}),
+                -3, 7 * 0.5, 0 
+            );
     bodyMesh.add(leg1);
     
     // Leg 2
-    leg2 = new THREE.Mesh( new THREE.CubeGeometry( 2, 7, 2 ), new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paper.jpg')}) );
-    leg2.position.x = 3;
-	leg2.position.y = 7 * 0.5;
+    leg2 = new gameObject( 
+                new THREE.CubeGeometry( 2, 7, 2 ), 
+                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/woodLegs.jpg')}),
+                3, 7 * 0.5, 0
+            );
     bodyMesh.add(leg2);
     
     scene.add(bodyMesh);
@@ -152,10 +167,6 @@ function addControl(controlObject: Control): void {
     gui.add(controlObject, 'randomColor');
     gui.add(controlObject, 'presetColor');
     gui.add(controlObject, 'resetScene');
-    // gui.add(controlObject, 'addCube');
-    // gui.add(controlObject, 'removeCube');
-    // gui.add(controlObject, 'outputObjects');
-    // gui.add(controlObject, 'numberOfObjects').listen();
 }
 
 function addStatsObject() {

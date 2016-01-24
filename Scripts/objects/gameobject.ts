@@ -16,5 +16,6 @@ module objects {
             this.receiveShadow = true;
             this.castShadow = true;
         }
+        
     }
 }
