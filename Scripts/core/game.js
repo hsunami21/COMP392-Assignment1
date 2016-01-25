@@ -34,7 +34,12 @@ var control;
 var gui;
 var stats;
 var step = 0;
-var head, body, arm1, arm2, leg1, leg2;
+var head;
+var body;
+var arm1;
+var arm2;
+var leg1;
+var leg2;
 var bodyMesh;
 function init() {
     // Instantiate a new Scene object

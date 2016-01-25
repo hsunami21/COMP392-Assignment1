@@ -39,7 +39,12 @@ var gui: GUI;
 var stats: Stats;
 var step: number = 0;
 
-var head, body, arm1, arm2, leg1, leg2;
+var head: gameObject;
+var body: gameObject;
+var arm1: gameObject;
+var arm2: gameObject;
+var leg1: gameObject;
+var leg2: gameObject;
 var bodyMesh: THREE.Object3D;
 
 function init() {
@@ -98,51 +103,44 @@ function init() {
 
     // Head
     head = new gameObject(
-                new THREE.CubeGeometry( 4, 4, 4 ), 
-                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/face.jpg')}),
-                0, 19, 0
-            );
-
+            new THREE.CubeGeometry( 4, 4, 4 ), 
+            new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/face.jpg')}),
+            0, 19, 0);
     bodyMesh.add(head);
     
     // Body
     body = new gameObject( 
-                new THREE.CubeGeometry( 8, 10, 2 ), 
-                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/brickBody.jpeg')}),
-                0, 12, 0
-            );
+            new THREE.CubeGeometry( 8, 10, 2 ), 
+            new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/brickBody.jpeg')}),
+            0, 12, 0);
     bodyMesh.add(body);
     
     // Arm 1
     arm1 = new gameObject( 
-                new THREE.CubeGeometry( 8, 2, 2 ), 
-                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paperArms.jpg')}),
-                -8, 16, 0
-            );
+            new THREE.CubeGeometry( 8, 2, 2 ), 
+            new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paperArms.jpg')}),
+            -8, 16, 0);
     bodyMesh.add(arm1);
     
     // Arm 2
     arm2 = new gameObject( 
-                new THREE.CubeGeometry( 8, 2, 2 ), 
-                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paperArms.jpg')}),
-                8, 16, 0 
-            );
+            new THREE.CubeGeometry( 8, 2, 2 ), 
+            new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/paperArms.jpg')}),
+            8, 16, 0);
     bodyMesh.add(arm2);
     
     // Leg 1
     leg1 = new gameObject( 
-                new THREE.CubeGeometry( 2, 7, 2 ), 
-                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/woodLegs.jpg')}),
-                -3, 7 * 0.5, 0 
-            );
+            new THREE.CubeGeometry( 2, 7, 2 ), 
+            new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/woodLegs.jpg')}),
+            -3, 7 * 0.5, 0);
     bodyMesh.add(leg1);
     
     // Leg 2
     leg2 = new gameObject( 
-                new THREE.CubeGeometry( 2, 7, 2 ), 
-                new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/woodLegs.jpg')}),
-                3, 7 * 0.5, 0
-            );
+            new THREE.CubeGeometry( 2, 7, 2 ), 
+            new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture('../../Assets/Images/woodLegs.jpg')}),
+            3, 7 * 0.5, 0);
     bodyMesh.add(leg2);
     
     scene.add(bodyMesh);

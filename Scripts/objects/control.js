@@ -15,21 +15,21 @@ var objects;
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++
         // Change to random colors
         Control.prototype.randomColor = function () {
-            head.material.color.setRGB(Math.random(), Math.random(), Math.random());
-            body.material.color.setRGB(Math.random(), Math.random(), Math.random());
-            arm1.material.color.setRGB(Math.random(), Math.random(), Math.random());
-            arm2.material.color.setRGB(Math.random(), Math.random(), Math.random());
-            leg1.material.color.setRGB(Math.random(), Math.random(), Math.random());
-            leg2.material.color.setRGB(Math.random(), Math.random(), Math.random());
+            head.material.setValues({ color: (Math.random() * 0xFFFFFF) });
+            body.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
+            arm1.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
+            arm2.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
+            leg1.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
+            leg2.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
         };
         // Change to preset colors
         Control.prototype.presetColor = function () {
-            head.material.color.setHex(0xffa500);
-            body.material.color.setHex(0xff69b4);
-            arm1.material.color.setHex(0x89cff0);
-            arm2.material.color.setHex(0x89cff0);
-            leg1.material.color.setHex(0x551a8b);
-            leg2.material.color.setHex(0x551a8b);
+            head.material.setValues({ color: 0xffa500 });
+            body.material.setValues({ color: 0xff69b4 });
+            arm1.material.setValues({ color: 0x89cff0 });
+            arm2.material.setValues({ color: 0x89cff0 });
+            leg1.material.setValues({ color: 0x551a8b });
+            leg2.material.setValues({ color: 0x551a8b });
         };
         // Reset scene
         Control.prototype.resetScene = function () {
@@ -39,12 +39,12 @@ var objects;
             bodyMesh.rotation.x = 0;
             bodyMesh.rotation.y = 0;
             bodyMesh.rotation.z = 0;
-            head.material.color.setHex(0xffffff);
-            body.material.color.setHex(0xffffff);
-            arm1.material.color.setHex(0xffffff);
-            arm2.material.color.setHex(0xffffff);
-            leg1.material.color.setHex(0xffffff);
-            leg2.material.color.setHex(0xffffff);
+            head.material.setValues({ color: 0xffffff });
+            body.material.setValues({ color: 0xffffff });
+            arm1.material.setValues({ color: 0xffffff });
+            arm2.material.setValues({ color: 0xffffff });
+            leg1.material.setValues({ color: 0xffffff });
+            leg2.material.setValues({ color: 0xffffff });
         };
         // show scene objects
         Control.prototype.outputObjects = function () {
