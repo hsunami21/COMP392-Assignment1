@@ -1,5 +1,23 @@
 /// <reference path="_reference.ts"/>
 
+/*
+    Source name: CubeMan
+    Author: Wendall Hsu 300739743
+    Last Modified By: Wendall Hsu
+    Date Last Modified: January 29, 2016
+    Program Description: Creation of a humanoid figure using THREEJS and TypeScript
+    Revision History:
+        Commit #1: Added cube man
+        Commit #2: Added rotation along each axis
+        Commit #3: Added color changing
+        Commit #4: Added textures
+        Commit #5: Added reset scene function
+        Commit #6: Added plane texture and moved spotlight
+        Commit #7: Fixed gitignore file to use on Azure
+        Commit #8: Changed body part object types
+        Commit #9: Added header information to files
+*/
+
 // MAIN GAME FILE
 
 // THREEJS Aliases

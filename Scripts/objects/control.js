@@ -15,7 +15,7 @@ var objects;
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++
         // Change to random colors
         Control.prototype.randomColor = function () {
-            head.material.setValues({ color: (Math.random() * 0xFFFFFF) });
+            head.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
             body.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
             arm1.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
             arm2.material.setValues({ color: (Math.random() * 0xFFFFFF << 0) });
