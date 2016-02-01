@@ -16,6 +16,7 @@
         Commit #8: Changed body part object types
         Commit #9: Added header information to files
         Commit #10: Fixed reset scene function
+        Commit #11: Fixed GUI scroll values
 */
 // MAIN GAME FILE
 // THREEJS Aliases
@@ -90,8 +91,14 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 60, 40);
+    control = new Control(0.01, 0.01, 0.01, 60, 40);
     addControl(control);
+    control.rotationSpeedX = 0;
+    control.rotationSpeedY = 0;
+    control.rotationSpeedZ = 0;
+    gui.__controllers[0].setValue(0);
+    gui.__controllers[1].setValue(0);
+    gui.__controllers[2].setValue(0);
     console.log("Added Control to scene...");
     // Add framerate stats
     addStatsObject();
