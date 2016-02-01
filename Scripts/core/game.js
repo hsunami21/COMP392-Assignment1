@@ -3,7 +3,7 @@
     Source name: CubeMan
     Author: Wendall Hsu 300739743
     Last Modified By: Wendall Hsu
-    Date Last Modified: January 29, 2016
+    Date Last Modified: February 1, 2016
     Program Description: Creation of a humanoid figure using THREEJS and TypeScript
     Revision History:
         Commit #1: Added cube man
@@ -15,6 +15,7 @@
         Commit #7: Fixed gitignore file to use on Azure
         Commit #8: Changed body part object types
         Commit #9: Added header information to files
+        Commit #10: Fixed reset scene function
 */
 // MAIN GAME FILE
 // THREEJS Aliases

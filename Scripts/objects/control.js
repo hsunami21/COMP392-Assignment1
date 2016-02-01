@@ -45,6 +45,9 @@ var objects;
             arm2.material.setValues({ color: 0xffffff });
             leg1.material.setValues({ color: 0xffffff });
             leg2.material.setValues({ color: 0xffffff });
+            gui.__controllers[0].setValue(0);
+            gui.__controllers[1].setValue(0);
+            gui.__controllers[2].setValue(0);
         };
         // show scene objects
         Control.prototype.outputObjects = function () {
